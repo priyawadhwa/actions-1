@@ -78,7 +78,7 @@ runs:
         [ -n '${{ inputs.template }}' ] && templatearg="--template='${{ inputs.template }}'"
         ${{ inputs.empty-workspace }} && workspacearg="$workspacearg --empty-workspace"
         ${{ inputs.sign-with-key }} && signarg="--signing-key ${{ inputs.signing-key-path }}"
-        sudo melange build ${{ inputs.config }} --arch ${{ inputs.archs }} --out-dir ${{ inputs.repository-path }} $signarg $repoarg $keyringarg $workspacearg "${templatearg}" --use-proot
+        sudo melange build ${{ inputs.config }} --arch ${{ inputs.archs }} --out-dir ${{ inputs.repository-path }} $signarg $repoarg $keyringarg $workspacearg --template='${{ inputs.template }}' --use-proot
     - name: 'Fix local repository permissions'
       shell: bash
       run: |
