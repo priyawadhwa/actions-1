@@ -64,7 +64,7 @@ runs:
       if: ${{ inputs.sign-with-temporary-key }}
       with:
         signing-key-path: ${{ inputs.signing-key-path }}
-    - uses: chainguard-dev/actions/melange-build-pkg@main
+    - uses: priyawadhwa/actions-1/melange-build-pkg@fix-template
       with:
         config: ${{ inputs.config }}
         archs: ${{ inputs.archs }}
